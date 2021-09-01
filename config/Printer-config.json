@@ -1,0 +1,13 @@
+{
+    "positions": ["0.00 80.80 0.00"],
+    "hotspotsId": ["hotspot-first"],
+    "materialArray": [],
+    "colors": [],
+    "bumps": [],
+    "positionToAnnotation": {
+        "0":["hotspot-first"]
+    },
+    "localizations": {
+        
+    }
+}
