@@ -1,0 +1,22 @@
+[
+  {
+    "question": "Which part of the brain is the emotional centre?",
+    "answers": [
+      "Thalamus",
+      "Neocortex",
+      "Amygdala",
+      "Hippocampus"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "question": "What is Amygdala hijack?",
+    "answers": [
+      "When thalamus accepts sensory data from eyes and ears",
+      "When person responds inappropriately based on emotional rather than intellectual factors",
+      "When neokortex act as a damper switch for the amygdala",
+      "When basal ganglia control the movements"
+    ],
+    "correctIndex": 1
+  }
+]

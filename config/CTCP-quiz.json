@@ -1,0 +1,22 @@
+[
+  {
+    "question": "What happens when a collaborative robot collides with a worker?",
+    "answers": [
+      "Harm to the worker",
+      "Safelly stops",
+      "The program is deleted",
+      "The movement continues"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "question": "What can be used to program a collaborative robot?",
+    "answers": [
+      "Computer",
+      "Machine language",
+      "Manually teaching the operation, computer, step by step programing using the controller interface",
+      "Mobile phone"
+    ],
+    "correctIndex": 0
+  }
+]

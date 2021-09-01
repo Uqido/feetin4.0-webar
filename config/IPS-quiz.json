@@ -1,0 +1,22 @@
+[
+  {
+    "question": "DLP technology is very similar to?",
+    "answers": [
+      "DMLS",
+      "DLP",
+      "SLA",
+      "FDM"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "question": "Expand the DOD shortcut?",
+    "answers": [
+      "Drop on Demand",
+      "Do on Demand",
+      "Draw on Demand",
+      "Drop of Design"
+    ],
+    "correctIndex": 0
+  }
+]

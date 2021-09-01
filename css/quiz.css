@@ -1,0 +1,46 @@
+.answer-grid-cell {
+    padding: 2em;
+}
+
+.custom-title {
+    text-align: center;
+    padding: 1em;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.answer-card {
+    padding: 1em;
+    background-size: contain;
+    box-shadow: 1px 2px 2px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    transition: all 250ms;
+    background: #dfdfdf;
+}
+
+.answer-card::after {
+    content: "";
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    border-radius: 8px;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 250ms;
+}
+
+.answer-card:hover {
+    transform: scale(1.01);
+}
+
+.answer-card:hover::after {
+    opacity: 1;
+}
+.restart-card {
+    width: 10rem;
+    margin: 2rem auto auto;
+    text-align: center;
+}
