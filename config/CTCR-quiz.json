@@ -1,22 +1,22 @@
 [
   {
-    "question": "aaaaaaaaaaaaaaa?",
+    "question": "How is an RFID read produced using a capture device like the one shown?",
     "answers": [
-      "aaa",
-      "bbb",
-      "ccc",
-      "ddd"
+      "The user pulls the trigger, points it at the shoe, radio wave goes out from the antenna to the tag, the tag reacts and emits a radio wave to the antenna, the antenna receives it and notifies the user's pda to display the information associated with the tag.",
+      "The user pulls the trigger, points it towards the shoe, emits a laser beam towards the shoe, the tag reacts and emits a radio wave towards the antenna, the antenna receives and notifies the user's pda to display the information associated with the tag.",
+      "The shoe is continuously emitting radio waves, since it has an active antenna and the receiver of the capture device receives the information from the tag.",
+      "None of the answer is correct"
     ],
     "correctIndex": 0
   },
   {
-    "question": "bbbbbbbbbbbbbbb?",
+    "question": "What is the correct order to use the device?",
     "answers": [
-      "aaa",
-      "bbb",
-      "ccc",
-      "ddd"
+      "Turn on the PDA, point it at the tags, pull the trigger and start reading.",
+      "Turn on the PDA, turn on the reader, turn on our control application, point to where the tags are integrated, pull the trigger, receive the information in our PDA, turn off the PDA, turn off the reader.",
+      "Turn on the PDA, turn on our control application, point to where the tags are integrated, pull the trigger, receive the information in our pda, turn off the pda, turn off the reader.",
+      "None of the answers is correct."
     ],
-    "correctIndex": 0
+    "correctIndex": 1
   }
 ]

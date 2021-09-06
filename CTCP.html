@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" class="fullscreen-100">
+
+<head>
+    <meta charset="utf-8">
+    <title>CTCP</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/quiz.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="white" />
+    <meta name="description" content="">
+    <link rel="icon" type="image/png" href="favicon-uqido.png">
+
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+
+    <script src="https://unpkg.com/intersection-observer/intersection-observer.js"></script>
+
+    <script src="https://unpkg.com/resize-observer-polyfill/dist/ResizeObserver.js"></script>
+
+    <script src="https://unpkg.com/fullscreen-polyfill/dist/fullscreen.polyfill.js"></script>
+
+    <script src="https://unpkg.com/focus-visible/dist/focus-visible.js" defer></script>
+
+    <script src="js/i18n/banana-i18n.js"></script>
+
+    <script src="js/page-config.js"></script>
+</head>
+
+<body class="fullscreen-100">
+    <div class="fullscreen-100">
+        <div class="background fullscreen-100">
+            <model-viewer id="modelViewer" class='model-viewer' ar autoplay camera-controls
+                src='models/CTCP.glb' ios-src='models/CTCP.usdz' alt='' noloop
+                camera-orbit="-30deg 55deg 60%" min-camera-orbit="auto auto 80%"
+                ar-modes="scene-viewer webxr quick-look" exposure="1" shadow-intensity="1.5" shadow-softness="0.8"
+                quick-look-browsers="safari chrome">
+                <script src="js/LoadingBar.js"></script>
+                <div class="unselectable" id="" slot="" data-position="" data-normal="">
+    <div class="unselectable" style="display: flex;transform: translateX(50%)">
+        <div class="hotspot-bar"></div>
+        <div class="unselectable hotspot-text text-white"></div>
+    </div>
+</div>
+                
+                <div id="viewer-bottom" class="viewer-bottom">
+                    
+                </div>
+                <script>
+                    document.addEventListener("page-configured", function (e) {
+                        window.forceNoIframe = true;
+                        window.forceAnnotations = true;
+
+                        const annotations = window.hotspotsId.map((elem) => document.getElementById(elem));
+
+                        annotations.forEach((element) => {
+                            element.style.display = "none";
+                        })
+
+                        modelViewer.addEventListener('load', () => {
+                            annotations.forEach((element) => {
+                                element.style.display = "block";
+                            })
+                        });
+
+                        window.annotations = annotations
+                    });
+                </script>
+                <script src="js/ContentCustomizer.js"></script>
+                <script>
+                    document.addEventListener("page-configured", function (e) {
+
+                        for (let annotation of window.annotations) {
+                            annotation.classList.add("hide-child");
+                        }
+
+
+                        let is_Open = false;
+
+                        function model_Animate() {
+                            console.log("animate")
+                            console.log(modelViewer.paused)
+                            if (modelViewer.paused) {
+                                if (is_Open) {
+                                    modelViewer.animationName = "Close";
+                                    is_Open = false;
+                                    const interval = setInterval(() => {
+                                        if (modelViewer.paused) {
+                                            clearInterval(interval);
+                                            showAndEnablePin();
+                                        }
+                                    }, 500);
+                                } else {
+                                    modelViewer.animationName = "Open";
+                                    hideAndDisablePin()
+                                    is_Open = true;
+                                }
+                                modelViewer.play();
+                            }
+                        }
+
+
+                        window.onPinClick = function (annotationID) {
+
+                            const item = document.getElementById(annotationID);
+
+                            if (!item.classList.contains("hide-child")) {
+                                //it was already opened! closing
+                                for (let annotation of annotations) {
+                                    annotation.classList.add("hide-child");
+                                    annotation.classList.remove("hide-pulse");
+                                }
+                                return;
+                            }
+
+                            for (let annotation of annotations) {
+                                annotation.classList.add("hide-child");
+                                annotation.classList.remove("hide-pulse");
+                            }
+
+                            item.classList.remove("hide-child")
+                            item.classList.add("hide-pulse")
+                        }
+
+                        const hideAndDisablePin = function () {
+                            for (let annotation of annotations) {
+                                annotation.classList.add("hide-child");
+                                annotation.classList.remove("hide-pulse");
+                            }
+
+                            for (let annotation of annotations) {
+                                annotation.style.display = "none"
+                            }
+                        }
+
+                        const showAndEnablePin = function () {
+
+                            for (let annotation of annotations) {
+                                annotation.style.display = "block"
+                            }
+                        }
+                    })
+                </script>
+            </model-viewer>
+        </div>
+        <div style="height: 19em">
+            <div id="quiz">
+                <div id="question" class="custom-title">
+                </div>
+
+                <div style=" display: grid; grid-template-columns: 2fr 2fr">
+                    <div style="grid-column-start: 1" class="answer-grid-cell">
+                        <div id="answer-1" class="answer-card" onclick="onAnswerClick(0)">
+                        </div>
+                    </div>
+                    <div style="grid-column-start: 2" class="answer-grid-cell">
+                        <div id="answer-2" class="answer-card" onclick="onAnswerClick(1)">
+                        </div>
+                    </div>
+                    <div style="grid-column-start: 1; grid-row-start: 2" class="answer-grid-cell">
+                        <div id="answer-3" class="answer-card" onclick="onAnswerClick(2)">
+                        </div>
+                    </div>
+                    <div style="grid-column-start: 2; grid-row-start: 2" class="answer-grid-cell">
+                        <div id="answer-4" class="answer-card" onclick="onAnswerClick(3)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="recap" style="display: none">
+                <div class="custom-title">
+                    Session Recap
+                </div>
+                <div id="recap-message" style="text-align: center">
+                </div>
+                <div class="restart-card answer-card" onclick="restartQuiz()">
+                    Restart
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="js/model-viewer/dist/1.8.0/model-viewer.min.js"></script>
+    <script src="js/quiz.js"></script>
+</body>
+</html>
