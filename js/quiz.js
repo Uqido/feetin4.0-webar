@@ -23,25 +23,25 @@ function onAnswerClick(index) {
         return
 
     isAnswerGiven = true
-    //check answer, color card
+        //check answer, color card
     const correctIndex = quiz[questionIndex].correctIndex
 
     const isCorrect = index === correctIndex
     correctAnswers += isCorrect ? 1 : 0
-    const newColor = isCorrect ? "green" : "red"
+    const newClass = isCorrect ? "right-answer" : "wrong-answer"
 
     switch (index) {
         case 0:
-            answer1.style.backgroundColor = newColor
+            answer1.classList.add(newClass)
             break
         case 1:
-            answer2.style.backgroundColor = newColor
+            answer2.classList.add(newClass)
             break
         case 2:
-            answer3.style.backgroundColor = newColor
+            answer3.classList.add(newClass)
             break
         case 3:
-            answer4.style.backgroundColor = newColor
+            answer4.classList.add(newClass)
             break
 
     }
@@ -55,10 +55,7 @@ function onAnswerClick(index) {
         else
             initWithIndex(nextQuestionIndex)
         isAnswerGiven = false
-    }, 3000)
-
-    //await sleep(5000)
-
+    }, 2000)
 
 }
 
@@ -81,22 +78,33 @@ function restartQuiz() {
     toggleRecap(false)
 }
 
+function initRightAnswer(text) {
+    return `<div>${text}</div>
+            <div class="icon"><i class="fas fa-check fa-2x"></i></div>`
+}
+
+function initWrongAnswer(text) {
+    return `<div>${text}</div>
+            <div class="icon"><i class="fas fa-times fa-2x"></i></div>`
+}
+
 function initWithIndex(index) {
     questionIndex = index
     const current = quiz[index]
+    const correctIndex = quiz[index].correctIndex
     question.innerText = current.question
-    answer1.innerText = current.answers[0]
-    answer2.innerText = current.answers[1]
-    answer3.innerText = current.answers[2]
-    answer4.innerText = current.answers[3]
+    answer1.innerHTML = correctIndex == 0 ? initRightAnswer(current.answers[0]) : initWrongAnswer(current.answers[0])
+    answer2.innerHTML = correctIndex == 1 ? initRightAnswer(current.answers[1]) : initWrongAnswer(current.answers[1])
+    answer3.innerHTML = correctIndex == 2 ? initRightAnswer(current.answers[2]) : initWrongAnswer(current.answers[2])
+    answer4.innerHTML = correctIndex == 3 ? initRightAnswer(current.answers[3]) : initWrongAnswer(current.answers[3])
 
-    answer1.style.backgroundColor = "#dfdfdf"
-    answer2.style.backgroundColor = "#dfdfdf"
-    answer3.style.backgroundColor = "#dfdfdf"
-    answer4.style.backgroundColor = "#dfdfdf"
+    answer1.classList.remove("right-answer", "wrong-answer")
+    answer2.classList.remove("right-answer", "wrong-answer")
+    answer3.classList.remove("right-answer", "wrong-answer")
+    answer4.classList.remove("right-answer", "wrong-answer")
 }
 
-(async () => {
+(async() => {
 
     const pageName = url.toString().split("/").pop().replace(".html", "")
 

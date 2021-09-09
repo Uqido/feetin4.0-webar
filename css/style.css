@@ -1,12 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
-body{
+body {
     font-family: 'Roboto', sans-serif;
 }
 
-.hotspot-text{
+.hotspot-text {
     margin-left: 8px;
-    margin-top:-4px;
+    margin-top: -4px;
     max-width: 200px;
     font-size: medium;
     /*text-shadow:
@@ -16,16 +15,16 @@ body{
             1px 1px 0 #000;*/
 }
 
-.hotspot-bar{
+.hotspot-bar {
     width: 0;
     background-color: #6ca0cf;
 }
 
-.no-ar-button{
-    --ar-button-display:none;
+.no-ar-button {
+    --ar-button-display: none;
 }
 
-.text-white{
+.text-white {
     color: #f7f7f7;
     font-family: 'Roboto', sans-serif;
 }
@@ -37,47 +36,54 @@ body{
     width: 100%;
 }
 
-html{
+html {
     height: 100%;
 }
 
-.background{
-    background: rgb(156, 156, 156);
-    background: linear-gradient(360deg, rgba(156, 156, 156, 1) 0%, rgba(156, 156, 156, 1) 10%, rgba(244, 244, 244, 1) 100%);
+.background {
+    background: rgb(244, 244, 244);
 }
 
-.fullscreen-100{
+.fullscreen-100 {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
 }
 
-.fullscreen > div {
-    overflow-y:hidden;
+.viewer {
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    width: 75%;
+    align-self: center;
 }
 
-.container{
+.fullscreen>div {
+    overflow-y: hidden;
+}
+
+.container {
     margin: 0 0 0 0;
     text-align: center;
     height: 100%;
     width: 100%;
 }
 
-.title{
+.title {
     font-size: 3rem;
 }
 
-.model-viewer{
+.model-viewer {
     height: 100%;
     width: 100%;
 }
 
-.no-default-loading{
-    --progress-bar-color:#0000;
-    --progress-mask:#0000;
-    --progress-bar-height:0px;
-    --poster-color:#0000;
+.no-default-loading {
+    --progress-bar-color: #0000;
+    --progress-mask: #0000;
+    --progress-bar-height: 0px;
+    --poster-color: #0000;
 }
 
 .model-viewer-w80 {
@@ -97,10 +103,13 @@ html{
     transform: translate(-15%);
 }
 
-.right-description:after{
+.right-description:after {
     content: '';
     position: absolute;
-    top: -100px; right: 0; bottom: -100px; left: 0;
+    top: -100px;
+    right: 0;
+    bottom: -100px;
+    left: 0;
     z-index: -1;
     margin-left: -60px;
     border-radius: inherit;
@@ -115,14 +124,14 @@ html{
     background-repeat: no-repeat;
 }
 
-.uqido-logo{
+.uqido-logo {
     background-image: url("../img/uqido-logo.png");
     background-size: 207px 70px;
     height: 70px;
     width: 207px;
 }
 
-.uqido-logo-white{
+.uqido-logo-white {
     background-image: url("../img/uqido-logo-white.png");
     background-size: 207px 70px;
     height: 70px;
@@ -149,7 +158,6 @@ html{
     position: absolute;
     left: 40px;
     bottom: 40px;
-
 }
 
 .clickable {
@@ -170,7 +178,7 @@ html{
     padding: 16px;
 }
 
-.text{
+.text {
     font-size: 1.2em;
     line-height: 40px;
 }
@@ -181,13 +189,11 @@ html{
         transform: translate(0, -25%);
         padding: 0;
     }
-
     .model-viewer-w80 {
         padding-top: 24px;
         height: 364px;
         width: 100%;
     }
-
     .right-description {
         background: transparent;
         transform: translate(0);
@@ -195,33 +201,31 @@ html{
         padding: 16px 16px 64px;
         text-align: start;
     }
-
-    .right-description:after{
+    .right-description:after {
         content: '';
         position: absolute;
-        top: 0; right: 0; bottom: 0; left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
         z-index: -1;
         margin-left: -120px;
         border-radius: inherit;
         background: #0000;
         filter: blur(0px);
     }
-
     .viewer-bottom {
         position: absolute;
         left: 16px;
         bottom: 16px;
     }
-
-    html{
+    html {
         height: auto;
     }
-
     .fullscreen {
         height: auto;
     }
-
-    .fullscreen-100{
+    .fullscreen-100 {
         height: 100%;
     }
 }

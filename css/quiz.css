@@ -1,21 +1,42 @@
+.quiz {
+    margin: 16px;
+    min-height: 240px;
+}
+
 .answer-grid-cell {
-    padding: 2em;
+    padding: 2%;
 }
 
 .custom-title {
     text-align: center;
-    padding: 1em;
+    padding: 1rem;
     font-weight: bold;
     font-size: x-large;
 }
 
+.recap-message {
+    padding: 1rem;
+    text-align: center;
+}
+
 .answer-card {
-    padding: 1em;
-    background-size: contain;
-    box-shadow: 1px 2px 2px 0 rgba(0, 0, 0, 0.3);
-    border-radius: 8px;
-    transition: all 250ms;
-    background: #dfdfdf;
+    padding: 0.6rem;
+    background: aliceblue;
+    border: 1px solid #84c5fe;
+    border-radius: 5px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+}
+
+@media only screen and (max-width: 600px) {
+    .answer-card {
+        font-size: 10px;
+    }
 }
 
 .answer-card::after {
@@ -32,15 +53,52 @@
     transition: all 250ms;
 }
 
+.right-answer {
+    color: #155724 !important;
+    background: #d4edda !important;
+    border: 1px solid #c3e6cb !important;
+}
+
+.right-answer>.icon {
+    color: #058623;
+}
+
+.wrong-answer {
+    color: #721c24 !important;
+    background: #f8d7da !important;
+    border: 1px solid #f5c6cb !important;
+}
+
+.wrong-answer>.icon {
+    color: #910412;
+}
+
 .answer-card:hover {
     transform: scale(1.01);
+    color: #004085;
+    background: #cce5ff;
+    border: 1px solid #b8daff;
 }
 
 .answer-card:hover::after {
     opacity: 1;
 }
+
 .restart-card {
     width: 10rem;
     margin: 2rem auto auto;
     text-align: center;
+}
+
+.icon {
+    height: 26px;
+    width: 26px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 13px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    line-height: 24px;
+    color: transparent;
 }

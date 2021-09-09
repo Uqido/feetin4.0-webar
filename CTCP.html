@@ -24,29 +24,28 @@
     <script src="js/i18n/banana-i18n.js"></script>
 
     <script src="js/page-config.js"></script>
+
+    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-a11y="true"></script>
 </head>
 
 <body class="fullscreen-100">
-    <div class="fullscreen-100">
-        <div class="background fullscreen-100">
-            <model-viewer id="modelViewer" class='model-viewer' ar autoplay camera-controls
-                src='models/CTCP.glb' ios-src='models/CTCP.usdz' alt='' noloop
-                camera-orbit="-30deg 55deg 60%" min-camera-orbit="auto auto 80%"
-                ar-modes="scene-viewer webxr quick-look" exposure="1" shadow-intensity="1.5" shadow-softness="0.8"
-                quick-look-browsers="safari chrome">
+    <div class="fullscreen-100" style="display:flex; flex-direction: column;">
+        <div id="model-viewer-container" class="viewer">
+            <model-viewer id="modelViewer" class='model-viewer' ar autoplay camera-controls src='models/CTCP.glb' ios-src='models/CTCP.usdz' alt='' noloop camera-orbit="120deg 80deg 100%" min-camera-orbit="auto 10deg 180%" max-camera-orbit="auto 90deg 190%" ar-modes="scene-viewer webxr quick-look"
+                min-field-of-view="60deg" max-field-of-view="60deg" exposure="1" shadow-intensity="1.5" shadow-softness="0.8" quick-look-browsers="safari chrome">
                 <script src="js/LoadingBar.js"></script>
                 <div class="unselectable" id="" slot="" data-position="" data-normal="">
-    <div class="unselectable" style="display: flex;transform: translateX(50%)">
-        <div class="hotspot-bar"></div>
-        <div class="unselectable hotspot-text text-white"></div>
-    </div>
-</div>
-                
+                    <div class="unselectable" style="display: flex;transform: translateX(50%)">
+                        <div class="hotspot-bar"></div>
+                        <div class="unselectable hotspot-text text-white"></div>
+                    </div>
+                </div>
+
                 <div id="viewer-bottom" class="viewer-bottom">
-                    
+
                 </div>
                 <script>
-                    document.addEventListener("page-configured", function (e) {
+                    document.addEventListener("page-configured", function(e) {
                         window.forceNoIframe = true;
                         window.forceAnnotations = true;
 
@@ -67,7 +66,7 @@
                 </script>
                 <script src="js/ContentCustomizer.js"></script>
                 <script>
-                    document.addEventListener("page-configured", function (e) {
+                    document.addEventListener("page-configured", function(e) {
 
                         for (let annotation of window.annotations) {
                             annotation.classList.add("hide-child");
@@ -99,7 +98,7 @@
                         }
 
 
-                        window.onPinClick = function (annotationID) {
+                        window.onPinClick = function(annotationID) {
 
                             const item = document.getElementById(annotationID);
 
@@ -121,7 +120,7 @@
                             item.classList.add("hide-pulse")
                         }
 
-                        const hideAndDisablePin = function () {
+                        const hideAndDisablePin = function() {
                             for (let annotation of annotations) {
                                 annotation.classList.add("hide-child");
                                 annotation.classList.remove("hide-pulse");
@@ -132,7 +131,7 @@
                             }
                         }
 
-                        const showAndEnablePin = function () {
+                        const showAndEnablePin = function() {
 
                             for (let annotation of annotations) {
                                 annotation.style.display = "block"
@@ -142,11 +141,10 @@
                 </script>
             </model-viewer>
         </div>
-        <div style="height: 19em">
+        <div class="quiz">
             <div id="quiz">
                 <div id="question" class="custom-title">
                 </div>
-
                 <div style=" display: grid; grid-template-columns: 2fr 2fr">
                     <div style="grid-column-start: 1" class="answer-grid-cell">
                         <div id="answer-1" class="answer-card" onclick="onAnswerClick(0)">
@@ -170,7 +168,7 @@
                 <div class="custom-title">
                     Session Recap
                 </div>
-                <div id="recap-message" style="text-align: center">
+                <div id="recap-message" class="recap-message">
                 </div>
                 <div class="restart-card answer-card" onclick="restartQuiz()">
                     Restart
@@ -181,4 +179,5 @@
     <script type="module" src="js/model-viewer/dist/1.8.0/model-viewer.min.js"></script>
     <script src="js/quiz.js"></script>
 </body>
+
 </html>
