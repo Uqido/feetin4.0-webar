@@ -42,9 +42,66 @@
                 </div>
 
                 <div id="viewer-bottom" class="viewer-bottom">
-
+                    <div id="move_camera" onclick="rotateCamera()" class="clickable" style="background-image: url(img/Move.png);"></div>
+                    <div id="animate" onclick="model_Animate()" class="clickable" style="background-image: url(img/Animate.png);"></div>
                 </div>
                 <script>
+                    const hideAndDisablePin = function() {
+                        if (window.annotation === undefined)
+                            return
+                        for (let annotation of window.annotations) {
+                            annotation.classList.add("hide-child");
+                            annotation.classList.remove("hide-pulse");
+                        }
+
+                        for (let annotation of window.annotations) {
+                            annotation.style.display = "none"
+                        }
+                    }
+
+                    const showAndEnablePin = function() {
+                        if (window.annotation === undefined)
+                            return
+
+                        for (let annotation of window.annotations) {
+                            annotation.style.display = "block"
+                        }
+                    }
+
+
+                    let is_Open = false;
+
+                    function model_Animate() {
+                        console.log("animate")
+                        console.log(modelViewer.paused)
+                        if (modelViewer.paused) {
+                            if (is_Open) {
+                                modelViewer.animationName = "Idle";
+                                modelViewer.animationName = "Animation";
+                                hideAndDisablePin()
+                                is_Open = false;
+                                const interval = setInterval(() => {
+                                    if (modelViewer.paused) {
+                                        clearInterval(interval);
+                                        showAndEnablePin();
+                                    }
+                                }, 500);
+                            } else {
+                                modelViewer.animationName = "Idle";
+                                modelViewer.animationName = "Animation";
+                                hideAndDisablePin()
+                                is_Open = true;
+                                const interval = setInterval(() => {
+                                    if (modelViewer.paused) {
+                                        clearInterval(interval);
+                                        showAndEnablePin();
+                                    }
+                                }, 500);
+                            }
+                            modelViewer.play();
+                        }
+                    }
+
                     document.addEventListener("page-configured", function(e) {
                         window.forceNoIframe = true;
                         window.forceAnnotations = true;
@@ -73,31 +130,6 @@
                         }
 
 
-                        let is_Open = false;
-
-                        function model_Animate() {
-                            console.log("animate")
-                            console.log(modelViewer.paused)
-                            if (modelViewer.paused) {
-                                if (is_Open) {
-                                    modelViewer.animationName = "Close";
-                                    is_Open = false;
-                                    const interval = setInterval(() => {
-                                        if (modelViewer.paused) {
-                                            clearInterval(interval);
-                                            showAndEnablePin();
-                                        }
-                                    }, 500);
-                                } else {
-                                    modelViewer.animationName = "Open";
-                                    hideAndDisablePin()
-                                    is_Open = true;
-                                }
-                                modelViewer.play();
-                            }
-                        }
-
-
                         window.onPinClick = function(annotationID) {
 
                             const item = document.getElementById(annotationID);
@@ -118,24 +150,6 @@
 
                             item.classList.remove("hide-child")
                             item.classList.add("hide-pulse")
-                        }
-
-                        const hideAndDisablePin = function() {
-                            for (let annotation of annotations) {
-                                annotation.classList.add("hide-child");
-                                annotation.classList.remove("hide-pulse");
-                            }
-
-                            for (let annotation of annotations) {
-                                annotation.style.display = "none"
-                            }
-                        }
-
-                        const showAndEnablePin = function() {
-
-                            for (let annotation of annotations) {
-                                annotation.style.display = "block"
-                            }
                         }
                     })
                 </script>
