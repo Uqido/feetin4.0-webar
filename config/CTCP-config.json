@@ -1,11 +1,11 @@
 {
-    "positions": [],
-    "hotspotsId": [],
+    "positions": ["0.00 0.00 0.00","0.00 0.00 0.00","0.00 0.00 0.00","0.00 0.00 0.00"],
+    "hotspotsId": ["hotspot-Controller","hotspot-Gripper","hotspot-Joints","hotspot-Safety"],
     "materialArray": [],
     "colors": [],
     "bumps": [],
     "positionToAnnotation": {
-        "0":[]
+        "0":["hotspot-Controller"],"1":["hotspot-Gripper"],"2":["hotspot-Joints"],"3":["hotspot-Safety"]
     },
     "localizations": {
         

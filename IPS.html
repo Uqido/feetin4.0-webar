@@ -35,18 +35,26 @@
                 min-field-of-view="60deg" max-field-of-view="60deg" exposure="1" shadow-intensity="1.5" shadow-softness="0.8" quick-look-browsers="safari chrome">
                 <script src="js/LoadingBar.js"></script>
                 <div class="unselectable" id="" slot="" data-position="" data-normal="">
-                    <div class="unselectable" style="display: flex;transform: translateX(50%)">
-                        <div class="hotspot-bar"></div>
-                        <div class="unselectable hotspot-text text-white"></div>
-                    </div>
-                </div>
-                <div class="unselectable" id="hotspot-first" slot="hotspot-first" data-position="0.00 80.80 0.00" data-normal="0.00 1.00 0.00">
-                    <div class="unselectable" style="display: flex;transform: translateX(50%)">
-                        <div class="hotspot-bar"></div>
-                        <div class="unselectable hotspot-text text-white">this is first hotspot</div>
-                    </div>
-                </div>
-
+    <div class="unselectable" style="display: flex;transform: translateX(50%)">
+        <div class="hotspot-bar"></div>
+        <div class="unselectable hotspot-text text-white"></div>
+    </div>
+</div> <div class="unselectable" id="hotspot-Nozzle" slot="hotspot-Nozzle" data-position="0.00 0.00 0.00" data-normal="0.00 1.00 0.00">
+    <div class="unselectable" style="display: flex;transform: translateX(50%)">
+        <div class="hotspot-bar"></div>
+        <div class="unselectable hotspot-text text-white">Head (extruder) with nozzle to extract polymers</div>
+    </div>
+</div> <div class="unselectable" id="hotspot-Platform" slot="hotspot-Platform" data-position="0.00 0.00 0.00" data-normal="0.00 1.00 0.00">
+    <div class="unselectable" style="display: flex;transform: translateX(50%)">
+        <div class="hotspot-bar"></div>
+        <div class="unselectable hotspot-text text-white">Platform moving down following the printing the object</div>
+    </div>
+</div> <div class="unselectable" id="hotspot-Filament" slot="hotspot-Filament" data-position="0.00 0.00 0.00" data-normal="0.00 1.00 0.00">
+    <div class="unselectable" style="display: flex;transform: translateX(50%)">
+        <div class="hotspot-bar"></div>
+        <div class="unselectable hotspot-text text-white">Filament of polymers</div>
+    </div>
+</div> 
                 <div id="viewer-bottom" class="viewer-bottom">
                     <div id="move_camera" onclick="rotateCamera()" class="clickable" style="background-image: url(img/Move.png);"></div>
                     <div id="animate" onclick="model_Animate()" class="clickable" style="background-image: url(img/Animate.png);"></div>
@@ -127,7 +135,7 @@
                 <script src="js/ContentCustomizer.js"></script>
                 <script>
                     document.addEventListener("page-configured", function(e) {
-                        console.log("page configured!")
+
                         for (let annotation of window.annotations) {
                             annotation.classList.add("hide-child");
                         }

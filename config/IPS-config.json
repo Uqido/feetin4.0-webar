@@ -1,11 +1,11 @@
 {
-    "positions": ["0.00 80.80 0.00"],
-    "hotspotsId": ["hotspot-first"],
+    "positions": ["0.00 0.00 0.00","0.00 0.00 0.00","0.00 0.00 0.00"],
+    "hotspotsId": ["hotspot-Nozzle","hotspot-Platform","hotspot-Filament"],
     "materialArray": [],
     "colors": [],
     "bumps": [],
     "positionToAnnotation": {
-        "0":["hotspot-first"]
+        "0":["hotspot-Nozzle"],"1":["hotspot-Platform"],"2":["hotspot-Filament"]
     },
     "localizations": {
         
