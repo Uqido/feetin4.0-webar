@@ -178,7 +178,7 @@ function rotateCamera(index) {
     }
 
     if (window.forceAnnotations === undefined) {
-        for (let annotation of annotations) {
+        for (let annotation of window.annotations) {
             annotation.style.display = "none";
             if (toEnable.includes(annotation.id)) {
                 annotation.style.display = "block";
@@ -227,7 +227,7 @@ function receiveMessage(event) {
     }
 }
 
-document.addEventListener("page-configured", function () {
+document.addEventListener("page-configured", function() {
     if (inIframe()) {
         document.getElementById('viewer-bottom').style.display = "none";
         //modelviewer.classList.add("no-ar-button")

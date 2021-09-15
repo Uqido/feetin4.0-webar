@@ -6,6 +6,7 @@
     <title>IPS</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/quiz.css">
+    <link rel="stylesheet" href="css/hotspots.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="white" />
     <meta name="description" content="">
@@ -31,30 +32,51 @@
 <body class="fullscreen-100">
     <div class="fullscreen-100" style="display:flex; flex-direction: column;">
         <div id="model-viewer-container" class="viewer">
-            <model-viewer id="modelViewer" class='model-viewer' ar autoplay camera-controls src='models/IPS.glb' ios-src='models/IPS.usdz' alt='' noloop camera-orbit="-30deg 55deg 100%" min-camera-orbit="auto 10deg 180%" max-camera-orbit="auto 90deg 190%" ar-modes="scene-viewer webxr quick-look"
+            <model-viewer id="modelViewer" class='model-viewer' ar autoplay camera-controls src='models/IPS.glb' ios-src='models/IPS.usdz' alt='' noloop camera-orbit="150deg 70deg 100%" min-camera-orbit="auto 10deg 180%" max-camera-orbit="auto 90deg 190%" ar-modes="scene-viewer webxr quick-look"
                 min-field-of-view="60deg" max-field-of-view="60deg" exposure="1" shadow-intensity="1.5" shadow-softness="0.8" quick-look-browsers="safari chrome">
                 <script src="js/LoadingBar.js"></script>
-                <div class="unselectable" id="" slot="" data-position="" data-normal="">
-    <div class="unselectable" style="display: flex;transform: translateX(50%)">
-        <div class="hotspot-bar"></div>
-        <div class="unselectable hotspot-text text-white"></div>
-    </div>
-</div> <div class="unselectable" id="hotspot-Nozzle" slot="hotspot-Nozzle" data-position="0.00 0.00 0.00" data-normal="0.00 1.00 0.00">
-    <div class="unselectable" style="display: flex;transform: translateX(50%)">
-        <div class="hotspot-bar"></div>
-        <div class="unselectable hotspot-text text-white">Head (extruder) with nozzle to extract polymers</div>
-    </div>
-</div> <div class="unselectable" id="hotspot-Platform" slot="hotspot-Platform" data-position="0.00 0.00 0.00" data-normal="0.00 1.00 0.00">
-    <div class="unselectable" style="display: flex;transform: translateX(50%)">
-        <div class="hotspot-bar"></div>
-        <div class="unselectable hotspot-text text-white">Platform moving down following the printing the object</div>
-    </div>
-</div> <div class="unselectable" id="hotspot-Filament" slot="hotspot-Filament" data-position="0.00 0.00 0.00" data-normal="0.00 1.00 0.00">
-    <div class="unselectable" style="display: flex;transform: translateX(50%)">
-        <div class="hotspot-bar"></div>
-        <div class="unselectable hotspot-text text-white">Filament of polymers</div>
-    </div>
-</div> 
+                <div id="hotspot-Nozzle" style="width: 24px;height: 24px" slot="hotspot-Nozzle" data-position="-2m 2m -2m" data-normal="0 1 0" data-visibility-attribute="visible" onclick="onPinClick('hotspot-Nozzle')">
+                    <div data-i18n="hotspot-Nozzle" class="hotspot-pin-text text-white hotspot-content">
+                        Head (extruder) with nozzle to extract polymers
+                    </div>
+                    <div class="hotspot-pin">
+                    </div>
+                    <!-- dot -->
+                    <div class="pulse outer"></div>
+                    <!-- pulse outer -->
+                    <div class="pulse mid"></div>
+                    <!-- pulse mid -->
+                    <div class="pulse inner"></div>
+                    <!-- pulse inner -->
+                </div>
+                <div id="hotspot-Platform" style="width: 24px;height: 24px" slot="hotspot-Platform" data-position="0.15m 0.35m -0.35m" data-normal="0 1 0" data-visibility-attribute="visible" onclick="onPinClick('hotspot-Platform')">
+                    <div data-i18n="hotspot-Platform" class="hotspot-pin-text text-white hotspot-content">
+                        Platform moving down following the printing the object
+                    </div>
+                    <div class="hotspot-pin">
+                    </div>
+                    <!-- dot -->
+                    <div class="pulse outer"></div>
+                    <!-- pulse outer -->
+                    <div class="pulse mid"></div>
+                    <!-- pulse mid -->
+                    <div class="pulse inner"></div>
+                    <!-- pulse inner -->
+                </div>
+                <div id="hotspot-Filament" style="width: 24px;height: 24px" slot="hotspot-Filament" data-position="0.15m 0.35m -0.35m" data-normal="0 1 0" data-visibility-attribute="visible" onclick="onPinClick('hotspot-Filament')">
+                    <div data-i18n="hotspot-Filament" class="hotspot-pin-text text-white hotspot-content">
+                        Filament of polymers
+                    </div>
+                    <div class="hotspot-pin">
+                    </div>
+                    <!-- dot -->
+                    <div class="pulse outer"></div>
+                    <!-- pulse outer -->
+                    <div class="pulse mid"></div>
+                    <!-- pulse mid -->
+                    <div class="pulse inner"></div>
+                    <!-- pulse inner -->
+                </div>
                 <div id="viewer-bottom" class="viewer-bottom">
                     <div id="move_camera" onclick="rotateCamera()" class="clickable" style="background-image: url(img/Move.png);"></div>
                     <div id="animate" onclick="model_Animate()" class="clickable" style="background-image: url(img/Animate.png);"></div>
