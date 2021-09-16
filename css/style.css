@@ -214,6 +214,9 @@ html {
         background: #0000;
         filter: blur(0px);
     }
+    .viewer {
+        width: 100%;
+    }
     .viewer-bottom {
         position: absolute;
         left: 16px;
