@@ -52,14 +52,12 @@
 }
 
 .hotspot-content {
-    height: 5rem;
-    margin-left: 8px;
-    margin-top: -4px;
+    height: auto;
     max-width: 350px;
     font-size: 0.9rem;
     background-color: #06070869;
     border-radius: 10px;
-    padding: 4px;
+    padding: 8px;
 }
 
 .no-loading-mask {
@@ -123,7 +121,6 @@
 
 @media only screen and (max-width: 950px) {
     .hotspot-content {
-        height: 7rem;
         max-width: 160px;
         font-size: 0.7em;
     }
