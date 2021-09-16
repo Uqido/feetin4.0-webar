@@ -1,0 +1,13 @@
+{
+    "positions": ["0.01 0.03 0.04","0.03 0.03 -0.04","0.02 0.00 0.00","0.00 0.08 0.00","0.08 -0.04 0.00"],
+    "hotspotsId": ["hotspot-PowerOn1","hotspot-PowerOn2","hotspot-Trigger","hotspot-PDA","hotspot-Antenna"],
+    "materialArray": [],
+    "colors": [],
+    "bumps": [],
+    "positionToAnnotation": {
+        "0":["hotspot-PowerOn1"],"1":["hotspot-PowerOn2"],"2":["hotspot-Trigger"],"3":["hotspot-PDA"],"4":["hotspot-Antenna"]
+    },
+    "localizations": {
+        
+    }
+}
