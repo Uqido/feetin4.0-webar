@@ -1,22 +1,22 @@
 [
   {
-    "question": "aaaaaaaaaaaaaaa?",
+    "question": "Which of the following is the right list of some hardware components of a computer?",
     "answers": [
-      "aaa",
-      "bbb",
-      "ccc",
-      "ddd"
+      "RAM memory, Mouse, Motherboard, Operating system, Hard Disk",
+      "RAM memory, Hard Disk, Mouse, Keyboard, Webcam, Speakers",
+      "Hard Disk, Keyboard, Application Program, Webcam, Operating System",
+      "Hard Disk, Keyboard, RAM memory, Mouse, Office package"
     ],
-    "correctIndex": 0
+    "correctIndex": 1
   },
   {
-    "question": "bbbbbbbbbbbbbbb?",
+    "question": "What is the main device for entering data and text into a computer?",
     "answers": [
-      "aaa",
-      "bbb",
-      "ccc",
-      "ddd"
+      "The monitor",
+      "The mouse",
+      "The printer",
+      "The keyboard"
     ],
-    "correctIndex": 0
+    "correctIndex": 3
   }
 ]

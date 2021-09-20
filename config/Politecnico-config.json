@@ -1,11 +1,11 @@
 {
-    "positions": [],
-    "hotspotsId": [],
+    "positions": ["0.00 0.51 1.16","0.27 0.42 0.25","-0.24 0.08 0.71","-0.14 0.08 -0.05","-0.13 0.44 -0.88","-0.29 0.41 -0.88"],
+    "hotspotsId": ["hotspot-Printer","hotspot-Monitor","hotspot-Mouse","hotspot-Keyboard","hotspot-CPU","hotspot-RAM"],
     "materialArray": [],
     "colors": [],
     "bumps": [],
     "positionToAnnotation": {
-        "0":[]
+        "0":["hotspot-Printer"],"1":["hotspot-Monitor"],"2":["hotspot-Mouse"],"3":["hotspot-Keyboard"],"4":["hotspot-CPU"],"5":["hotspot-RAM"]
     },
     "localizations": {
         
