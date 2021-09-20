@@ -24,6 +24,27 @@
     <script src="js/i18n/banana-i18n.js"></script>
 
     <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-a11y="true"></script>
+
+    <style>
+        .color-button {
+            width: 30px;
+            height: 30px;
+            margin-top: 5px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+        }
+        
+        .color-button.selected {
+            box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, .5);
+        }
+        
+        .color-button-label {
+            margin-left: 40px;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+    </style>
 </head>
 
 <body class="fullscreen-100">
@@ -40,9 +61,49 @@
                 </div>
 
                 <div id="viewer-bottom" class="viewer-bottom">
-
+                    <div id="highlight_neocortex" class="clickable color-button" style="background-color: rgb(93, 216, 238);" onclick="highlight('highlight_neocortex')">
+                        <div class="color-button-label">
+                            Neocortex
+                        </div>
+                    </div>
+                    <div id="highlight_amygdala" class="clickable color-button" style="background-color: rgb(230, 103, 235);" onclick="highlight('highlight_amygdala')">
+                        <div class="color-button-label">
+                            Amygdala
+                        </div>
+                    </div>
+                    <div id="highlight_thalamus" class="clickable color-button" style="background-color: rgb(85, 233, 134);" onclick="highlight('highlight_thalamus')">
+                        <div class="color-button-label">
+                            Thalamus
+                        </div>
+                    </div>
                 </div>
                 <script src="js/ContentCustomizer.js"></script>
+                <script>
+                    const highlight_neocortex = document.getElementById("highlight_neocortex")
+                    const highlight_amygdala = document.getElementById("highlight_amygdala")
+                    const highlight_thalamus = document.getElementById("highlight_thalamus")
+
+                    const elements = [highlight_neocortex, highlight_amygdala, highlight_thalamus]
+
+                    function highlight(tohighlight) {
+                        for (element of elements) {
+                            const currentIsSelected = element.id === tohighlight
+                            materialHighlight(element.id, currentIsSelected)
+
+                            if (currentIsSelected)
+                                element.classList.add("selected")
+                            else
+                                element.classList.remove("selected")
+                        }
+                    }
+
+
+                    function materialHighlight(materialName, isHighlighted) {
+                        const toModify = modelViewer.model.materials.find(mat => mat.name === materialName)
+                        if (toModify !== undefined)
+                            toModify.setEmissiveFactor(isHighlighted ? [1, 1, 1] : [0, 0, 0])
+                    }
+                </script>
             </model-viewer>
         </div>
         <div class="quiz">
