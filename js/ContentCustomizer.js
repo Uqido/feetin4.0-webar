@@ -232,11 +232,4 @@ document.addEventListener("page-configured", function() {
         document.getElementById('viewer-bottom').style.display = "none";
         //modelviewer.classList.add("no-ar-button")
     }
-
-    if (window.forceAnnotations === undefined) {
-
-        for (let annotation of window.annotations) {
-            annotation.style.display = "none";
-        }
-    }
 })

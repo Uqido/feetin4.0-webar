@@ -6,7 +6,103 @@ if (!lang)
 
 const banana = new Banana(lang);
 
-(async () => {
+
+document.addEventListener("page-configured", function(e) {
+    window.forceNoIframe = true;
+    window.forceAnnotations = true;
+
+    const annotations = window.hotspotsId.map((elem) => document.getElementById(elem));
+    window.annotations = annotations
+
+    for (let annotation of annotations) {
+        annotation.classList.add("hide-child");
+    }
+
+
+    const hideAndDisablePin = function() {
+        if (annotations === undefined)
+            return
+        for (let annotation of annotations) {
+            annotation.classList.add("hide-child");
+            annotation.classList.remove("hide-pulse");
+        }
+
+        for (let annotation of annotations) {
+            annotation.style.display = "none"
+        }
+    }
+
+    const showAndEnablePin = function() {
+        if (annotations === undefined)
+            return
+
+        for (let annotation of annotations) {
+            annotation.style.display = "block"
+        }
+    }
+
+    let is_Open = false;
+
+    window.model_Animate = function() {
+        console.log("animate")
+        console.log(modelViewer.paused)
+        if (modelViewer.paused) {
+            if (is_Open) {
+                modelViewer.animationName = "Idle";
+                modelViewer.animationName = "Animation";
+                hideAndDisablePin()
+                is_Open = false;
+                const interval = setInterval(() => {
+                    if (modelViewer.paused) {
+                        clearInterval(interval);
+                        showAndEnablePin();
+                    }
+                }, 500);
+            } else {
+                modelViewer.animationName = "Idle";
+                modelViewer.animationName = "Animation";
+                hideAndDisablePin()
+                is_Open = true;
+                const interval = setInterval(() => {
+                    if (modelViewer.paused) {
+                        clearInterval(interval);
+                        showAndEnablePin();
+                    }
+                }, 500);
+            }
+            modelViewer.play();
+        }
+    }
+
+
+    window.onPinClick = function(annotationID) {
+
+        const item = document.getElementById(annotationID);
+
+        if (!item.classList.contains("hide-child")) {
+            //it was already opened! closing
+            for (let annotation of annotations) {
+                annotation.classList.add("hide-child");
+                annotation.classList.remove("hide-pulse");
+            }
+            return;
+        }
+
+        for (let annotation of annotations) {
+            annotation.classList.add("hide-child");
+            annotation.classList.remove("hide-pulse");
+        }
+
+        item.classList.remove("hide-child")
+        item.classList.add("hide-pulse")
+    }
+
+});
+
+
+
+
+(async() => {
 
     const pageName = url.toString().split("/").pop().replace(".html", "")
 

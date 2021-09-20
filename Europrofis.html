@@ -23,8 +23,6 @@
 
     <script src="js/i18n/banana-i18n.js"></script>
 
-    <script src="js/page-config.js"></script>
-
     <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-a11y="true"></script>
 </head>
 
@@ -44,101 +42,7 @@
                 <div id="viewer-bottom" class="viewer-bottom">
 
                 </div>
-                <script>
-                    document.addEventListener("page-configured", function(e) {
-                        window.forceNoIframe = true;
-                        window.forceAnnotations = true;
-
-                        const annotations = window.hotspotsId.map((elem) => document.getElementById(elem));
-
-                        annotations.forEach((element) => {
-                            element.style.display = "none";
-                        })
-
-                        modelViewer.addEventListener('load', () => {
-                            annotations.forEach((element) => {
-                                element.style.display = "block";
-                            })
-                        });
-
-                        window.annotations = annotations
-                    });
-                </script>
                 <script src="js/ContentCustomizer.js"></script>
-                <script>
-                    document.addEventListener("page-configured", function(e) {
-
-                        for (let annotation of window.annotations) {
-                            annotation.classList.add("hide-child");
-                        }
-
-
-                        let is_Open = false;
-
-                        function model_Animate() {
-                            console.log("animate")
-                            console.log(modelViewer.paused)
-                            if (modelViewer.paused) {
-                                if (is_Open) {
-                                    modelViewer.animationName = "Close";
-                                    is_Open = false;
-                                    const interval = setInterval(() => {
-                                        if (modelViewer.paused) {
-                                            clearInterval(interval);
-                                            showAndEnablePin();
-                                        }
-                                    }, 500);
-                                } else {
-                                    modelViewer.animationName = "Open";
-                                    hideAndDisablePin()
-                                    is_Open = true;
-                                }
-                                modelViewer.play();
-                            }
-                        }
-
-
-                        window.onPinClick = function(annotationID) {
-
-                            const item = document.getElementById(annotationID);
-
-                            if (!item.classList.contains("hide-child")) {
-                                //it was already opened! closing
-                                for (let annotation of annotations) {
-                                    annotation.classList.add("hide-child");
-                                    annotation.classList.remove("hide-pulse");
-                                }
-                                return;
-                            }
-
-                            for (let annotation of annotations) {
-                                annotation.classList.add("hide-child");
-                                annotation.classList.remove("hide-pulse");
-                            }
-
-                            item.classList.remove("hide-child")
-                            item.classList.add("hide-pulse")
-                        }
-
-                        const hideAndDisablePin = function() {
-                            for (let annotation of annotations) {
-                                annotation.classList.add("hide-child");
-                                annotation.classList.remove("hide-pulse");
-                            }
-
-                            for (let annotation of annotations) {
-                                annotation.style.display = "none"
-                            }
-                        }
-
-                        const showAndEnablePin = function() {
-
-                            for (let annotation of annotations) {
-                                annotation.style.display = "block"
-                            }
-                        }
-                    })
-                </script>
             </model-viewer>
         </div>
         <div class="quiz">
@@ -177,6 +81,7 @@
         </div>
     </div>
     <script type="module" src="js/model-viewer/dist/1.8.0/model-viewer.min.js"></script>
+    <script src="js/page-config.js"></script>
     <script src="js/quiz.js"></script>
 </body>
 
