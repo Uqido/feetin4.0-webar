@@ -6,6 +6,7 @@
     <title>Europrofis</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/quiz.css">
+    <link rel="stylesheet" href="css/hotspots.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="white" />
     <meta name="description" content="">
@@ -44,6 +45,13 @@
             margin-top: auto;
             margin-bottom: auto;
         }
+        
+        .viewer-bottom {
+            display: flex;
+            flex-direction: column;
+            left: 8px;
+            bottom: 8px;
+        }
     </style>
 </head>
 
@@ -53,13 +61,49 @@
             <model-viewer id="modelViewer" class='model-viewer' ar autoplay camera-controls src='models/Europrofis.glb' ios-src='models/Europrofis.usdz' alt='' noloop camera-orbit="-90deg 90deg 100%" min-camera-orbit="auto 10deg 200%" max-camera-orbit="auto 130deg 190%"
                 ar-modes="scene-viewer webxr quick-look" min-field-of-view="60deg" max-field-of-view="60deg" exposure="1" shadow-intensity="0" shadow-softness="0.8" quick-look-browsers="safari chrome">
                 <script src="js/LoadingBar.js"></script>
-                <div class="unselectable" id="" slot="" data-position="" data-normal="">
-                    <div class="unselectable" style="display: flex;transform: translateX(50%)">
-                        <div class="hotspot-bar"></div>
-                        <div class="unselectable hotspot-text text-white"></div>
+                <div id="hotspot-Neocortex" style="width: 24px;height: 24px" slot="hotspot-Neocortex" data-position="0.15 0.48 -0.21" data-normal="0.00 1.00 0.00" data-visibility-attribute="visible" onclick="onPinClick('hotspot-Neocortex')">
+                    <div data-i18n="hotspot-Neocortex" class="hotspot-pin-text text-white hotspot-content">
+                        The Cortex can act as a damper switch for the amygdala, but it can’t prevent the emotional surge from occurring in the first place, if the stimuli are strong enough.
                     </div>
+                    <div class="hotspot-pin">
+                    </div>
+                    <!-- dot -->
+                    <div class="pulse outer"></div>
+                    <!-- pulse outer -->
+                    <div class="pulse mid"></div>
+                    <!-- pulse mid -->
+                    <div class="pulse inner"></div>
+                    <!-- pulse inner -->
                 </div>
-
+                <div id="hotspot-Amygdala" style="width: 24px;height: 24px" slot="hotspot-Amygdala" data-position="0.06 0.06 -0.40" data-normal="0.00 1.00 0.00" data-visibility-attribute="visible" onclick="onPinClick('hotspot-Amygdala')">
+                    <div data-i18n="hotspot-Amygdala" class="hotspot-pin-text text-white hotspot-content">
+                        Is a small part of the Limbic brain/system located just above the Spinal Cord that stores Emotional Memories, particularly those associated with Fear. It is where the Fight or Flight response resides. The amygdala is the emotional centre of the human
+                        brain and can create split-second responses when a person is threatened. The term amygdala hijack describes any situation in which a person responds inappropriately based on emotional rather than intellectual factors
+                    </div>
+                    <div class="hotspot-pin">
+                    </div>
+                    <!-- dot -->
+                    <div class="pulse outer"></div>
+                    <!-- pulse outer -->
+                    <div class="pulse mid"></div>
+                    <!-- pulse mid -->
+                    <div class="pulse inner"></div>
+                    <!-- pulse inner -->
+                </div>
+                <div id="hotspot-Thalamus" style="width: 24px;height: 24px" slot="hotspot-Thalamus" data-position="-0.07 0.15 -0.23" data-normal="0.00 1.00 0.00" data-visibility-attribute="visible" onclick="onPinClick('hotspot-Thalamus')">
+                    <div data-i18n="hotspot-Thalamus" class="hotspot-pin-text text-white hotspot-content">
+                        Accepts sensory data from eyes and ears
+                    </div>
+                    <div class="hotspot-pin">
+                    </div>
+                    <!-- dot -->
+                    <div class="pulse outer"></div>
+                    <!-- pulse outer -->
+                    <div class="pulse mid"></div>
+                    <!-- pulse mid -->
+                    <div class="pulse inner"></div>
+                    <!-- pulse inner -->
+                </div>
                 <div id="viewer-bottom" class="viewer-bottom">
                     <div id="highlight_neocortex" class="clickable color-button" style="background-color: rgb(93, 216, 238);" onclick="highlight('highlight_neocortex')">
                         <div class="color-button-label">

@@ -1,11 +1,11 @@
 {
-    "positions": [],
-    "hotspotsId": [],
+    "positions": ["0.15 0.48 -0.21","0.06 0.06 -0.40","-0.07 0.15 -0.23"],
+    "hotspotsId": ["hotspot-Neocortex","hotspot-Amygdala","hotspot-Thalamus"],
     "materialArray": [],
     "colors": [],
     "bumps": [],
     "positionToAnnotation": {
-        "0":[]
+        "0":["hotspot-Neocortex","hotspot-Amygdala","hotspot-Thalamus"]
     },
     "localizations": {
         
