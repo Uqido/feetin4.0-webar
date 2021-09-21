@@ -105,7 +105,7 @@ function initWithIndex(index) {
 }
 
 (async() => {
-
+    const url = new URL(window.location.href);
     const pageName = url.toString().split("/").pop().replace(".html", "")
 
     const jsonPath = "config/" + pageName + "-quiz.json";
