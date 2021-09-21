@@ -23,8 +23,9 @@ document.addEventListener("page-configured", function(e) {
         if (annotations === undefined)
             return
         for (let annotation of annotations) {
-            annotation.classList.add("hide-child");
-            annotation.classList.remove("hide-pulse");
+            annotation.classList.add("hide-child")
+            annotation.classList.remove("hide-pulse")
+            annotation.classList.remove("hotspot-pin-half-hidden")
         }
 
         for (let annotation of annotations) {
@@ -82,19 +83,21 @@ document.addEventListener("page-configured", function(e) {
         if (!item.classList.contains("hide-child")) {
             //it was already opened! closing
             for (let annotation of annotations) {
-                annotation.classList.add("hide-child");
-                annotation.classList.remove("hide-pulse");
+                annotation.classList.add("hide-child")
+                annotation.classList.remove("hide-pulse")
+                annotation.classList.remove("hotspot-pin-half-hidden")
             }
             return;
         }
 
         for (let annotation of annotations) {
-            annotation.classList.add("hide-child");
-            annotation.classList.remove("hide-pulse");
+            annotation.classList.add("hide-child")
+            annotation.classList.add("hide-pulse")
+            annotation.classList.add("hotspot-pin-half-hidden")
         }
 
         item.classList.remove("hide-child")
-        item.classList.add("hide-pulse")
+        item.classList.remove("hotspot-pin-half-hidden")
     }
 
 });

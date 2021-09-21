@@ -95,6 +95,17 @@
     z-index: 10;
 }
 
+.hotspot-pin-half-hidden>.hotspot-pin {
+    /* background-color: #3CF; */
+    background: radial-gradient(rgba(160, 230, 253, 1), rgb(73, 112, 251));
+    /* Standard */
+    background: -webkit-radial-gradient(rgba(160, 230, 253, 0.3), rgb(73, 112, 251, 0.3));
+    /* Safari */
+    background: -o-radial-gradient(rgba(160, 230, 253, 1), rgb(73, 112, 251));
+    /* Opera 11.1 to 12.0 */
+    background: -moz-radial-gradient(rgba(160, 230, 253, 1), rgb(73, 112, 251));
+}
+
 .outer {
     border: 5px solid #FFF;
     height: 50px;
