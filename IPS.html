@@ -30,10 +30,10 @@
 <body class="fullscreen-100">
     <div class="fullscreen-100" style="display:flex; flex-direction: column;">
         <div id="model-viewer-container" class="viewer">
-            <model-viewer id="modelViewer" class='model-viewer' ar autoplay camera-controls src='models/IPS.glb' ios-src='models/IPS.usdz' alt='' noloop camera-orbit="150deg 70deg 100%" min-camera-orbit="auto 10deg 180%" max-camera-orbit="auto 90deg 190%" ar-modes="scene-viewer webxr quick-look"
-                camera-target="-2m 0m -2.5m" min-field-of-view="60deg" max-field-of-view="60deg" exposure="1" shadow-intensity="1.5" shadow-softness="0.8" quick-look-browsers="safari chrome">
+            <model-viewer id="modelViewer" class='model-viewer' ar autoplay camera-controls src='models/IPS.glb' ios-src='models/IPS.usdz' alt='' noloop camera-orbit="-30deg 70deg 100%" min-camera-orbit="auto 10deg 160%" max-camera-orbit="auto 90deg 190%" ar-modes="scene-viewer webxr quick-look"
+                camera-target="0m 0.2m 0m" min-field-of-view="60deg" max-field-of-view="60deg" exposure="1" shadow-intensity="1.5" shadow-softness="0.8" quick-look-browsers="safari chrome">
                 <script src="js/LoadingBar.js"></script>
-                <div id="hotspot-Nozzle" style="width: 24px;height: 24px" slot="hotspot-Nozzle" data-position="-2.7m 2m -2.7m" data-normal="0 1 0" data-visibility-attribute="visible" onclick="onPinClick('hotspot-Nozzle')">
+                <div id="hotspot-Nozzle" style="width: 24px;height: 24px" slot="hotspot-Nozzle" data-position="0.015m 0.2m 0.04m" data-normal="0 1 0" data-visibility-attribute="visible" onclick="onPinClick('hotspot-Nozzle')">
                     <div data-i18n="hotspot-Nozzle" class="hotspot-pin-text text-white hotspot-content">
                         Head (extruder) with nozzle to extract polymers
                     </div>
@@ -47,7 +47,7 @@
                     <div class="pulse inner"></div>
                     <!-- pulse inner -->
                 </div>
-                <div id="hotspot-Platform" style="width: 24px;height: 24px" slot="hotspot-Platform" data-position="-2.7m 0.8m -2.7m" data-normal="0 1 0" data-visibility-attribute="visible" onclick="onPinClick('hotspot-Platform')">
+                <div id="hotspot-Platform" style="width: 24px;height: 24px" slot="hotspot-Platform" data-position="0m 0.1m 0.027m" data-normal="0 1 0" data-visibility-attribute="visible" onclick="onPinClick('hotspot-Platform')">
                     <div data-i18n="hotspot-Platform" class="hotspot-pin-text text-white hotspot-content">
                         Platform moving down following the printing the object
                     </div>
@@ -61,7 +61,7 @@
                     <div class="pulse inner"></div>
                     <!-- pulse inner -->
                 </div>
-                <div id="hotspot-Filament" style="width: 24px;height: 24px" slot="hotspot-Filament" data-position="-2.7m 2.8m -2.7m" data-normal="0 1 0" data-visibility-attribute="visible" onclick="onPinClick('hotspot-Filament')">
+                <div id="hotspot-Filament" style="width: 24px;height: 24px" slot="hotspot-Filament" data-position="0.013m 0.32m 0.048m" data-normal="0 1 0" data-visibility-attribute="visible" onclick="onPinClick('hotspot-Filament')">
                     <div data-i18n="hotspot-Filament" class="hotspot-pin-text text-white hotspot-content">
                         Filament of polymers
                     </div>
