@@ -32,6 +32,11 @@
     justify-content: space-between;
     height: calc(100% - 1rem);
     min-height: 40px;
+    outline: none;
+}
+
+.answer-card:focus {
+    color: red;
 }
 
 @media only screen and (max-width: 600px) {
@@ -74,11 +79,22 @@
     color: #910412;
 }
 
-.answer-card:hover {
-    transform: scale(1.01);
-    color: #004085;
-    background: #cce5ff;
-    border: 1px solid #b8daff;
+@media only screen and (max-width: 1200px) {
+    .answer-card {
+        -webkit-tap-highlight-color: transparent;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .answer-card:hover {
+        transform: scale(1.01);
+        color: #004085;
+        background: #cce5ff;
+        border: 1px solid #b8daff;
+    }
+    .answer-card:hover::after {
+        opacity: 1;
+    }
 }
 
 .answer-card:hover::after {
