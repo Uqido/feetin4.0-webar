@@ -1,22 +1,21 @@
-[
-  {
-    "question": "Which of the following communication instrument is NOT a type of electronic communication?",
-    "answers": [
-      "Email",
-      "Text messages",
-      "Registered letter",
-      "Videoconference"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "question": "What is the best strategy in order to make a writing communication (e.g.: email, letter, newsletter, …) as effective as possible?",
-    "answers": [
-      "Know the goal of the communication and state it clearly",
-      "Use the correct tone for each situation",
-      "Keep language simple",
-      "Approach at least two different topics on the same communication as to save reader’s time."
-    ],
-    "correctIndex": 3
-  }
+[{
+        "question": "Which of the following communication instrument is NOT a type of electronic communication?",
+        "answers": [
+            "Email",
+            "Text messages",
+            "Registered letter",
+            "Videoconference"
+        ],
+        "correctIndex": 2
+    },
+    {
+        "question": "What are some strategies in order to communicate efficiently in any type of communication?",
+        "answers": [
+            "Know the goal of the communication and state it clearly",
+            "Use the same tone for each situation and only intervene if someone ask your opinion",
+            "Use a lot of adjectives and technical language",
+            "Approach al least two different topics on the same communication as to save the other person’s time."
+        ],
+        "correctIndex": 0
+    }
 ]
