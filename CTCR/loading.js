@@ -1,5 +1,5 @@
-pc.script.createLoadingScreen(function (app) {
-    var showSplash = function () {
+pc.script.createLoadingScreen(function(app) {
+    var showSplash = function() {
         // splash wrapper
         var wrapper = document.createElement('div');
         wrapper.id = 'application-splash-wrapper';
@@ -14,7 +14,7 @@ pc.script.createLoadingScreen(function (app) {
         var logo = document.createElement('img');
         logo.src = 'https://playcanvas.com/static-assets/images/play_text_252_white.png';
         splash.appendChild(logo);
-        logo.onload = function () {
+        logo.onload = function() {
             splash.style.display = 'block';
         };
 
@@ -28,20 +28,20 @@ pc.script.createLoadingScreen(function (app) {
 
     };
 
-    var hideSplash = function () {
+    var hideSplash = function() {
         var splash = document.getElementById('application-splash-wrapper');
         splash.parentElement.removeChild(splash);
     };
 
-    var setProgress = function (value) {
+    var setProgress = function(value) {
         var bar = document.getElementById('progress-bar');
-        if(bar) {
+        if (bar) {
             value = Math.min(1, Math.max(0, value));
             bar.style.width = value * 100 + '%';
         }
     };
 
-    var createCss = function () {
+    var createCss = function() {
         var css = [
             'body {',
             '    background-color: #FFFFFF;',
@@ -102,7 +102,7 @@ pc.script.createLoadingScreen(function (app) {
     createCss();
     showSplash();
 
-    app.on('preload:end', function () {
+    app.on('preload:end', function() {
         app.off('preload:progress');
     });
     app.on('preload:progress', setProgress);
