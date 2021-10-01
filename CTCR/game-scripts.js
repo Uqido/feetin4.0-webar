@@ -234,4 +234,4 @@ AssignMaterialImageElement.attributes.add("materialAsset", { type: "asset" }), A
 var Hotspot = pc.createScript("hotspot");
 Hotspot.prototype.initialize = function() { this.app.on("AnimateModel", (() => { this.entity.enabled = !1, window.setTimeout((() => { this.entity.enabled = !0 }), 3500) })) };
 
-//# sourceMappingURL=__game-scripts.js.map
+//# sourceMappingURL=game-scripts.js.map
