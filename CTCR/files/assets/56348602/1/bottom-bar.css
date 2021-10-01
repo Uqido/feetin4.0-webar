@@ -1,0 +1,36 @@
+.animate-button {
+    background-image: url(files/assets/56334563/1/Animate.png?id=56334563&branchId=a31c96c1-84e5-4fa8-968a-bd3323894cb6&t=b71cce91f1f2e6fc4597f0738e575df6);
+}
+
+.viewer-bottom {
+    display: flex;
+    flex-direction: row;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    position: absolute;
+    justify-content: space-between;
+}
+
+.clickable {
+    z-index: 21;
+    user-select: none;
+    text-align: center;
+    width: 42px;
+    height: 42px;
+    background-size: 42px 42px;
+    cursor: pointer;
+}
+
+.view-in-ar-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background-color: #fff;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 100px;
+}
