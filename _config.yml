@@ -1,1 +1,1 @@
-include: ['__start__.js']
+include: ['__start__.js', '__loading__.js', '__settings__.js', '__modules__.js', '__game-scripts.js','__game-scripts.js.map' ]
