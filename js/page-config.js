@@ -11,8 +11,9 @@ document.addEventListener("page-configured", function(e) {
     window.forceNoIframe = true;
     window.forceAnnotations = true;
 
-    const annotations = window.hotspotsId.map((elem) => document.getElementById(elem));
+    const annotations = window.hotspotsId.map((elem) => document.getElementById(elem)).filter((elem) => elem !== undefined && elem !== null);
     window.annotations = annotations
+
 
     for (let annotation of annotations) {
         annotation.classList.add("hide-child");
